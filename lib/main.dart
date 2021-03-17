@@ -1,33 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:sekolah_musik_app/Login.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main() => runApp(TC());
 
-class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
+class TC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        primarySwatch: Colors.blue,
-      ),
-      home: LoginPage(),
+      initialRoute: '/login',
+      debugShowCheckedModeBanner: false,
+      routes: {
+        //'/': (context) => HomePage(),
+        '/login': (context) => LoginPage(),
+        //'/signup' :(context) => SignupPage(),
+      },
     );
-  }
-}
-
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  @override
-  Widget build(BuildContext context) {
-    return Container();
   }
 }
 
