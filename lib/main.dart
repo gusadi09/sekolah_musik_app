@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sekolah_musik_app/Login.dart';
+import 'package:sekolah_musik_app/profile.dart';
+import 'package:sekolah_musik_app/registrasi.dart';
 
 void main() => runApp(TC());
 
@@ -7,12 +9,12 @@ class TC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: '/login',
+      initialRoute: '/regist',
       debugShowCheckedModeBanner: false,
       routes: {
-        //'/': (context) => HomePage(),
+        '/profile': (context) => ProfilePage(),
         '/login': (context) => LoginPage(),
-        //'/signup' :(context) => SignupPage(),
+        '/regist' :(context) => RegisterPage(),
       },
     );
   }

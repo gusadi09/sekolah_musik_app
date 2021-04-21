@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:muzzez/registrasi.dart';
+import 'package:sekolah_musik_app/registrasi.dart';
 
 class MyHomePage extends StatefulWidget {
   @override

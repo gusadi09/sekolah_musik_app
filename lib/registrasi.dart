@@ -16,7 +16,7 @@ class _RegisterPageState extends State<RegisterPage> {
       children: [
         Padding(
           padding: const EdgeInsets.only(top: 40, bottom: 50),
-          child: Image.asset('assets/img/logo2.png'),
+          child: Image.asset('assets/logo2.png'),
         )
       ],
     );
