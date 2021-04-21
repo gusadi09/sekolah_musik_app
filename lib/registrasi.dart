@@ -51,7 +51,7 @@ class _RegisterPageState extends State<RegisterPage> {
         keyboardType: TextInputType.text,
         onChanged: (value) {
           setState(() {
-
+            email = value;
           });
         },
         decoration: InputDecoration(

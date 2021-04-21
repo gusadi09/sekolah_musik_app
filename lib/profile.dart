@@ -78,7 +78,7 @@ class _ProfilePageState extends State<ProfilePage> {
         initialValue: auth.currentUser.email,
         onChanged: (value) {
           setState(() {
-
+            email = value
           });
         },
         decoration: InputDecoration(
