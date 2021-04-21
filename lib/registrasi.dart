@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -9,6 +10,7 @@ class RegisterPage extends StatefulWidget {
 class _RegisterPageState extends State<RegisterPage> {
   String email, password, username;
   bool agree = false;
+  final auth = FirebaseAuth.instance;
 
   Widget _buildLogo() {
     return Row(
@@ -49,7 +51,7 @@ class _RegisterPageState extends State<RegisterPage> {
         keyboardType: TextInputType.text,
         onChanged: (value) {
           setState(() {
-            email = value;
+
           });
         },
         decoration: InputDecoration(
@@ -66,6 +68,7 @@ class _RegisterPageState extends State<RegisterPage> {
       padding: EdgeInsets.only(right: 20, left: 20, bottom: 10),
       child: TextFormField(
         keyboardType: TextInputType.text,
+        obscureText: true,
         onChanged: (value) {
           setState(() {
             password = value;
@@ -85,6 +88,7 @@ class _RegisterPageState extends State<RegisterPage> {
       padding: EdgeInsets.only(right: 20, left: 20, bottom: 10),
       child: TextFormField(
         keyboardType: TextInputType.text,
+        obscureText: true,
         onChanged: (value) {
           setState(() {
             password = value;
@@ -125,7 +129,7 @@ class _RegisterPageState extends State<RegisterPage> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
-          height: 1.2 * (MediaQuery.of(context).size.height / 20),
+          height: 0.9 * (MediaQuery.of(context).size.height / 20),
           width: 6 * (MediaQuery.of(context).size.width / 8),
           margin: EdgeInsets.only(bottom: 0),
           child: RaisedButton(
@@ -134,9 +138,12 @@ class _RegisterPageState extends State<RegisterPage> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              auth.createUserWithEmailAndPassword(email: email, password: password);
+              Navigator.pushNamed(context, '/profile');
+            },
             child: Text(
-              "Login",
+              "Register",
               style: TextStyle(
                 color: Colors.white,
                 letterSpacing: 1.5,
@@ -160,7 +167,9 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         ),
         TextButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pushNamed(context, '/login');
+          },
           child: Text(
             'Login',
             style: TextStyle(

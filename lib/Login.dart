@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -9,12 +10,14 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
 
+  final auth  = FirebaseAuth.instance;
   @override
   void initState() {
     super.initState();
   }
 
   String email, password;
+
   Widget _buildLogo() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +102,10 @@ class _LoginPageState extends State<LoginPage> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(5.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              auth.signInWithEmailAndPassword(email: email, password: password);
+              Navigator.pushNamed(context, '/profile');
+            },
             child: Text(
               "Login",
               style: TextStyle(

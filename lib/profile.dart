@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -8,11 +9,12 @@ class ProfilePage extends StatefulWidget {
 
 class _ProfilePageState extends State<ProfilePage> {
   String username, name, email, nomer;
+  final auth  = FirebaseAuth.instance;
 
   Widget _buildFoto() {
     return Container(
       margin: EdgeInsets.only(top: 20),
-      child: Image.asset('assets/img/profile.png'),
+      child: Image.asset('assets/profile.png'),
     );
   }
 
@@ -73,9 +75,10 @@ class _ProfilePageState extends State<ProfilePage> {
       padding: EdgeInsets.all(8),
       child: TextFormField(
         keyboardType: TextInputType.text,
+        initialValue: auth.currentUser.email,
         onChanged: (value) {
           setState(() {
-            email = value;
+
           });
         },
         decoration: InputDecoration(
@@ -152,9 +155,12 @@ class _ProfilePageState extends State<ProfilePage> {
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(40.0),
             ),
-            onPressed: () {},
+            onPressed: () {
+              auth.signOut();
+              Navigator.pushNamed(context, '/login');
+            },
             child: Text(
-              "Save",
+              "Logout",
               style: TextStyle(
                 color: Colors.white,
                 letterSpacing: 1.5,

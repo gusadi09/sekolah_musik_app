@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "610397857235",
+    "project_id": "sekolah-musik",
+    "storage_bucket": "sekolah-musik.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:610397857235:android:7663ebd4fdd860616bfb26",
+        "android_client_info": {
+          "package_name": "com.kelompok6.sekolah_musik_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "610397857235-5sj300jhlkkhtgk7s3olt7f0ij4lgqfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp3zOz6Ewamy_HWO87Qy-F0OBrZT4nGWE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "610397857235-5sj300jhlkkhtgk7s3olt7f0ij4lgqfj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
